@@ -30,9 +30,9 @@ export default {
         post() {
             axios.post('/tweets', { body: this.body })
              .then(response => {
-                  this.tweets.unshift(response.data.body);
+                  this.tweets.unshift(response.data);
                   this.body = null;
-                  location.reload();
+              
              })
             .catch(err => {
                 console.log(err);

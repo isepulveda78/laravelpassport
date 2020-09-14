@@ -1940,10 +1940,9 @@ __webpack_require__.r(__webpack_exports__);
       axios.post('/tweets', {
         body: this.body
       }).then(function (response) {
-        _this.tweets.unshift(response.data.body);
+        _this.tweets.unshift(response.data);
 
         _this.body = null;
-        location.reload();
       })["catch"](function (err) {
         console.log(err);
       });
@@ -52718,6 +52717,7 @@ Vue.component('post-tweet', __webpack_require__(/*! ./components/PostTweet.vue *
 Vue.component('passport-clients', __webpack_require__(/*! ./components/passport/Clients.vue */ "./resources/js/components/passport/Clients.vue")["default"]);
 Vue.component('passport-authorized-clients', __webpack_require__(/*! ./components/passport/AuthorizedClients.vue */ "./resources/js/components/passport/AuthorizedClients.vue")["default"]);
 Vue.component('passport-personal-access-tokens', __webpack_require__(/*! ./components/passport/PersonalAccessTokens.vue */ "./resources/js/components/passport/PersonalAccessTokens.vue")["default"]);
+Vue.prototype.$http = axios;
 var app = new Vue({
   el: '#app'
 });
